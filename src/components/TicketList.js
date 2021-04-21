@@ -7,19 +7,22 @@ function TicketList(props){
   return (
     <>
       <hr />
-      {/* loop through the list passed down from ticket control */}
-      {props.ticketList.map((ticket, index) =>
-        <Ticket names={ticket.names}
+      {props.ticketList.map((ticket) =>
+        <Ticket
+          whenTicketClicked = {props.onTicketSelection}
+          names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
-          key={index}/>
+          id={ticket.id}
+          key={ticket.id}/>
       )}
     </>
   );
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
+  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;
