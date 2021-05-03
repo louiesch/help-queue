@@ -64,7 +64,7 @@ class TicketControl extends React.Component {
   }
 
   handleChangingSelectedTicket = (id) => {
-    const selectedTicket = this.props.masterTicketList[id];
+    const selectedTicket = this.props.mainTicketList[id];
     this.setState({selectedTicket: selectedTicket});
   }
 
@@ -98,7 +98,7 @@ class TicketControl extends React.Component {
     } else {
       currentlyVisibleState = 
         <TicketList 
-          ticketList={this.props.masterTicketList} 
+          ticketList={this.props.mainTicketList} 
           onTicketSelection={this.handleChangingSelectedTicket} />;
         buttonText = "Add Ticket";
     }
@@ -114,12 +114,12 @@ class TicketControl extends React.Component {
 }
 
 TicketControl.propTypes = {
-  masterTicketList: PropTypes.object
+  mainTicketList: PropTypes.object
 };
 
 const mapStateToProps = state => {
   return {
-    masterTicketList: state
+    mainTicketList: state
   }
 }
 
