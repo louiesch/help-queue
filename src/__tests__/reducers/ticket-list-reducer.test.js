@@ -3,12 +3,6 @@ import ticketListReducer from '../../reducers/ticket-list-reducer';
 describe('ticketListReducer', () => {
 
   let action;
-  const ticketData = {
-    names: 'Ryan & Aimen',
-    location: '4b',
-    issue: 'Redux action is not working correctly.',
-    id: 1
-  };
 
   const currentState = {
     1: {names: 'Ryan & Aimen',
@@ -21,9 +15,15 @@ describe('ticketListReducer', () => {
     id: 2 }
   }
 
+  const ticketData = {
+    names: 'Ryan & Aimen',
+    location: '4b',
+    issue: 'Redux action is not working correctly.',
+    id: 1
+  };
 
-  test('Should return default state if there is no action type passed into the reducer', () => {
-    expect(ticketListReducer({}, { type: null })).toEqual({});  
+  test('Should return default state if no action type is recognized', () => {
+    expect(ticketListReducer({}, { type: null })).toEqual({});
   });
 
   test('Should successfully add new ticket data to masterTicketList', () => {
@@ -57,4 +57,5 @@ describe('ticketListReducer', () => {
         id: 2 }
     });
   });
+
 });
