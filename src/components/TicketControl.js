@@ -15,7 +15,13 @@ class TicketControl extends React.Component {
       selectedTicket: null,
       editing: false
     };
-    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateTicketElapsedWaitTime(),
+    1000
+    );
   }
 
   handleClick = () => {

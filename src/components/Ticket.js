@@ -18,6 +18,7 @@ Ticket.propTypes = {
   location: PropTypes.string,
   issue: PropTypes.string,
   id: PropTypes.string,
+  timeOpen: PropTypes.string,
   whenTickedClicked: PropTypes.func
 };
 

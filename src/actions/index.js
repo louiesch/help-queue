@@ -8,12 +8,13 @@ export const toggleForm = () => ({
 });
 
 export const addTicket = (ticket) => {
-  const { names, location, issue, id } = ticket;
+  const { names, location, issue, timeOpen, id } = ticket;
   return {
     type: 'ADD_TICKET',
     names: names,
     location: location,
     issue: issue,
+    timeOpen: timeOpen,
     id: id
   }
 }
