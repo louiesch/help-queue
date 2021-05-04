@@ -32,7 +32,7 @@ describe ('rootReducer', () => {
       names: 'Ryan & Aimen',
       location: '4b',
       issue: 'Redux action is not working correctly.',
-      // timeOpen: 0,
+      timeOpen: 0,
       id: 1,
     };
     store.dispatch(action);
